@@ -113,6 +113,7 @@
 			children = (
 				5739FD1F232FFF8700C8623A /* AppDelegate.swift */,
 				5739FD21232FFF8700C8623A /* FirstViewController.swift */,
+				579628F023300A3300F72B46 /* CategoriaController.swift */,
 				5739FD23232FFF8700C8623A /* SecondViewController.swift */,
 				5739FD25232FFF8700C8623A /* Main.storyboard */,
 				579628F423300B9500F72B46 /* Categorias.storyboard */,
@@ -122,7 +123,6 @@
 				5739FD28232FFF8800C8623A /* Assets.xcassets */,
 				5739FD2A232FFF8800C8623A /* LaunchScreen.storyboard */,
 				5739FD2D232FFF8800C8623A /* Info.plist */,
-				579628F023300A3300F72B46 /* CategoriaController.swift */,
 				579628F123300A3300F72B46 /* CategoriaController.xib */,
 			);
 			path = HistoryApp;

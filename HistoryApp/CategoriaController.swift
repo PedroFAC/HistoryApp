@@ -7,14 +7,18 @@
 //
 
 import UIKit
-extension CategoriaViewController: UITableViewDelegate, UITableViewDataSource{
+
+extension CategoriaController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell1 = tableView.dequeueReusableCell(withIdentifier: "Celula1TableViewCell", for: indexPath) as! Celula1TableViewCell
-        cell1.label.text = listCategorias[indexPath.row]
+//        let cell1 = tableView.dequeueReusableCell(withIdentifier: "Celula1TableViewCell", for: indexPath) as! Celula1TableViewCell
+//        cell1.label.text = listCategorias[indexPath.row]
+        let cell1 = UITableViewCell.init(style: .default, reuseIdentifier: nil)
+        cell1.textLabel?.text = "Example 😎"
         return cell1
     }
     
@@ -25,7 +29,7 @@ extension CategoriaViewController: UITableViewDelegate, UITableViewDataSource{
 }
 
 
-class CategoriaViewController: UIViewController {
+class CategoriaController: UIViewController {
     let tableView = UITableView(frame:.zero)
     let listCategorias = ["2ª Guerra Mundial", "Guerra do Golfo", "Grande Depressão"]
     override func viewDidLoad() {
