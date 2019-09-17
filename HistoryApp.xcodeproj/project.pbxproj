@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57166E9B23316E830043E2C3 /* BotaoQueroAssistir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57166E9A23316E830043E2C3 /* BotaoQueroAssistir.swift */; };
 		5739FD20232FFF8700C8623A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739FD1F232FFF8700C8623A /* AppDelegate.swift */; };
 		5739FD22232FFF8700C8623A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739FD21232FFF8700C8623A /* FirstViewController.swift */; };
 		5739FD24232FFF8700C8623A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739FD23232FFF8700C8623A /* SecondViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		57166E9A23316E830043E2C3 /* BotaoQueroAssistir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotaoQueroAssistir.swift; sourceTree = "<group>"; };
 		5739FD1C232FFF8600C8623A /* HistoryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HistoryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5739FD1F232FFF8700C8623A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5739FD21232FFF8700C8623A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				579628F023300A3300F72B46 /* CategoriaController.swift */,
 				5739FD23232FFF8700C8623A /* SecondViewController.swift */,
 				5739FD25232FFF8700C8623A /* Main.storyboard */,
+				57166E9A23316E830043E2C3 /* BotaoQueroAssistir.swift */,
 				579628F423300B9500F72B46 /* Categorias.storyboard */,
 				579628FB23300C6300F72B46 /* MyList.storyboard */,
 				579628F923300C5200F72B46 /* Search.storyboard */,
@@ -282,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57166E9B23316E830043E2C3 /* BotaoQueroAssistir.swift in Sources */,
 				5739FD24232FFF8700C8623A /* SecondViewController.swift in Sources */,
 				579628F223300A3300F72B46 /* CategoriaController.swift in Sources */,
 				5739FD20232FFF8700C8623A /* AppDelegate.swift in Sources */,

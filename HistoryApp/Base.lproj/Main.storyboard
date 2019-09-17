@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-    <device id="retina6_1" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mhv-HI-YbN">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -49,6 +50,108 @@
             </objects>
             <point key="canvasLocation" x="632" y="565"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5Lh-x7-Tdt">
+            <objects>
+                <navigationController id="mhv-HI-YbN" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tpm-yH-2We">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="QWJ-YR-aex" kind="relationship" relationship="rootViewController" id="v5h-RH-05e"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YgS-Va-Wbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-991" y="911"/>
+        </scene>
+        <!--Botao Quero Assistir-->
+        <scene sceneID="bLf-QU-O1E">
+            <objects>
+                <viewController id="QWJ-YR-aex" customClass="BotaoQueroAssistir" customModule="HistoryApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vtf-9Q-sg1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Imitation Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gX1-ej-7ql">
+                                <rect key="frame" x="83.666666666666686" y="321" width="247" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53I-av-c4C">
+                                <rect key="frame" x="20" y="367" width="84" height="23"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhz-xh-5dx">
+                                <rect key="frame" x="20" y="398" width="374" height="142.33333333333337"/>
+                                <string key="text">Based on the real life story of legendary cryptanalyst Alan Turing, the film portrays the nail-biting race against time by Turing and his brilliant team of code-breakers at Britain's top-secret Government Code and Cypher School at Bletchley Park, during the darkest days of World War II.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imitation-game-benedict-cumberbatch-poster-banner" translatesAutoresizingMaskIntoConstraints="NO" id="SYl-Ls-CJG">
+                                <rect key="frame" x="0.0" y="88" width="414" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="SYl-Ls-CJG" secondAttribute="height" multiplier="46:25" id="OMe-CK-wZ9"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvc-Td-h9t">
+                                <rect key="frame" x="348" y="88" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="Desmarcado:" destination="sPL-OT-Fp9" eventType="touchUpInside" id="NHN-Te-N98"/>
+                                    <action selector="Desmarcado:" destination="QWJ-YR-aex" eventType="touchUpInside" id="hPE-Yp-nuB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMd-oA-11u">
+                                <rect key="frame" x="294" y="88" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="queroAssistir:" destination="QWJ-YR-aex" eventType="touchUpInside" id="YIf-R4-int"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oqj-JB-R8R">
+                                <rect key="frame" x="240" y="87" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="Assistido:" destination="QWJ-YR-aex" eventType="touchUpInside" id="ocx-M6-xcg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zhz-xh-5dx" firstAttribute="top" secondItem="53I-av-c4C" secondAttribute="bottom" constant="8" id="9kw-AX-J27"/>
+                            <constraint firstItem="SYl-Ls-CJG" firstAttribute="leading" secondItem="rI0-v5-sZZ" secondAttribute="leading" id="KWI-Lf-qre"/>
+                            <constraint firstItem="SYl-Ls-CJG" firstAttribute="trailing" secondItem="rI0-v5-sZZ" secondAttribute="trailing" id="S0v-zN-lsL"/>
+                            <constraint firstItem="gX1-ej-7ql" firstAttribute="centerX" secondItem="Vtf-9Q-sg1" secondAttribute="centerX" id="ZSp-tq-wKb"/>
+                            <constraint firstItem="53I-av-c4C" firstAttribute="top" secondItem="gX1-ej-7ql" secondAttribute="bottom" constant="12" id="c48-On-heZ"/>
+                            <constraint firstAttribute="trailing" secondItem="zhz-xh-5dx" secondAttribute="trailing" constant="20" id="gVT-W9-Seb"/>
+                            <constraint firstItem="SYl-Ls-CJG" firstAttribute="top" secondItem="rI0-v5-sZZ" secondAttribute="top" id="qOM-hT-J0K"/>
+                            <constraint firstItem="gX1-ej-7ql" firstAttribute="top" secondItem="SYl-Ls-CJG" secondAttribute="bottom" constant="8" id="vvP-rd-xSo"/>
+                            <constraint firstItem="zhz-xh-5dx" firstAttribute="leading" secondItem="rI0-v5-sZZ" secondAttribute="leading" constant="20" id="xiM-Ae-LCR"/>
+                            <constraint firstItem="53I-av-c4C" firstAttribute="leading" secondItem="Vtf-9Q-sg1" secondAttribute="leadingMargin" id="z75-FX-68L"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rI0-v5-sZZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8j6-Fv-x49"/>
+                    <connections>
+                        <outlet property="botaoAssistido" destination="Oqj-JB-R8R" id="cgP-ij-lce"/>
+                        <outlet property="botaoDesmarcado" destination="Lvc-Td-h9t" id="2ty-YS-Elu"/>
+                        <outlet property="botaoQueroAssistir" destination="oMd-oA-11u" id="vQo-3j-H81"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="heu-Ou-CIf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="sPL-OT-Fp9" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="6.6964285714285712" y="910.14492753623199"/>
+        </scene>
         <!--Search-->
         <scene sceneID="Ikj-8m-g3M">
             <objects>
@@ -70,4 +173,7 @@
             <point key="canvasLocation" x="693" y="196"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="imitation-game-benedict-cumberbatch-poster-banner" width="1001" height="539"/>
+    </resources>
 </document>
