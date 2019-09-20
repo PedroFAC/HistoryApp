@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="checkCell" id="gTV-IL-0wX" customClass="CheckCollectionViewCell" customModule="HistoryApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="123" height="115"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="123" height="115"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8iC-2I-uq4">
+                        <rect key="frame" x="0.0" y="0.0" width="123" height="115"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YBe-zK-mU6">
+                                <rect key="frame" x="0.0" y="0.0" width="123" height="85"/>
+                                <color key="backgroundColor" red="1" green="0.63528385586574387" blue="0.072388938715856388" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YBe-zK-mU6" firstAttribute="top" secondItem="8iC-2I-uq4" secondAttribute="top" id="NLg-2b-mZS"/>
+                            <constraint firstAttribute="trailing" secondItem="YBe-zK-mU6" secondAttribute="trailing" id="Tri-du-0HS"/>
+                            <constraint firstItem="YBe-zK-mU6" firstAttribute="leading" secondItem="8iC-2I-uq4" secondAttribute="leading" id="WDs-kX-r12"/>
+                            <constraint firstAttribute="bottom" secondItem="YBe-zK-mU6" secondAttribute="bottom" constant="30" id="bnr-l9-m6s"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="8iC-2I-uq4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="TP8-DD-IXr"/>
+                <constraint firstAttribute="bottom" secondItem="8iC-2I-uq4" secondAttribute="bottom" id="VKz-0J-spY"/>
+                <constraint firstAttribute="trailing" secondItem="8iC-2I-uq4" secondAttribute="trailing" id="YL2-0K-16b"/>
+                <constraint firstItem="8iC-2I-uq4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="uxb-Gj-uxJ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="382" height="325"/>
+            <connections>
+                <outlet property="bgView" destination="8iC-2I-uq4" id="h5A-ws-b96"/>
+                <outlet property="imageView" destination="YBe-zK-mU6" id="lhY-KT-kuY"/>
+            </connections>
+            <point key="canvasLocation" x="346" y="175"/>
+        </collectionViewCell>
+    </objects>
+</document>
