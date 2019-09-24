@@ -29,10 +29,10 @@ extension CategoriaController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let data = listCategorias[indexPath.row]
-        if(indexPath.row == 0){
             self.performSegue(withIdentifier: "detailSegue", sender: data)
-        }
+        
     }
+    
     
 }
 

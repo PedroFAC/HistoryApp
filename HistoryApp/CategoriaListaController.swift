@@ -10,7 +10,7 @@ import UIKit
 extension CategoriaListaController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return listaFilmes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -28,8 +28,15 @@ extension CategoriaListaController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let data = listaFilmes[indexPath.row]
-        if(indexPath.row == 4 || indexPath.row == 0){
             self.performSegue(withIdentifier: "obraSegue", sender: data)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if
+            segue.identifier == "obraSegue",
+            let destiny = segue.destination as? ObraController,
+            let nomeObraSender = sender as? String {
+            destiny.nomeObra = nomeObraSender
         }
     }
     
@@ -37,13 +44,13 @@ extension CategoriaListaController: UITableViewDelegate, UITableViewDataSource {
 class CategoriaListaController: UIViewController {
     
     var data: String!
-    
+    var nomeCategoria = ""
     let tableView = UITableView(frame: .zero)
-    let listaFilmes = ["O Grande Ditador","Stalingrado, a batalha final","O Resgate do Soldado Ryan","Sete Anos no Tibet","Band of Brothers"]
+    var listaFilmes = [""]
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
-
+        qualCategoria()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isScrollEnabled = false
@@ -58,7 +65,33 @@ class CategoriaListaController: UIViewController {
             ])
         // Do any additional setup after loading the view.
     }
-    
+    func qualCategoria (){
+        switch data {
+        case "2ª Guerra Mundial":
+            listaFilmes = ["The Great Dictator","Stalingrad","Saving Private Ryan","Seven Years in Tibet"]
+        case "Guerra do Golfo":
+            listaFilmes = ["The Hurt Locker"]
+        case "Grande Depressão":
+            listaFilmes = ["The Pianist","The Wave","The Untouchables"]
+        case "Unificações italiana e alemã":
+            listaFilmes = ["Garibaldi"]
+        case "Ascensão e queda de Napoleão":
+            listaFilmes = ["Napoleon"]
+        case "Revolução russa e socialismo soviético":
+            listaFilmes = ["Battleship Potemkin"]
+        case "Fatos relevantes depois da guerra fria":
+            listaFilmes = ["Cry Freedom", "Lord of War"]
+        case "Independência dos Estados Unidos":
+            listaFilmes = ["Plymouth Adventure", "The Patriot"]
+        case "Revolução francesa":
+            listaFilmes = ["To kill a king", "The Miserables"]
+        case "Revolução Industrial":
+            listaFilmes = ["Modern Times"]
+            
+        default:
+            listaFilmes = [""]
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -71,3 +104,4 @@ class CategoriaListaController: UIViewController {
     */
 
 }
+
