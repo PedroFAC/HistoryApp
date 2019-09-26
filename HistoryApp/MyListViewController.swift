@@ -22,7 +22,7 @@ class MyListViewController: UIViewController, UICollectionViewDelegate, UICollec
         return cell
     }
     
-    let img : [UIImage] = [#imageLiteral(resourceName: "200px-Saving_Private_Ryan_poster"),#imageLiteral(resourceName: "Band_of_Brothers")]
+    let img : [UIImage] = [#imageLiteral(resourceName: "imitation-game-benedict-cumberbatch-poster-banner"),#imageLiteral(resourceName: "Band_of_Brothers")]
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBAction func segment(_ sender: UISegmentedControl) {
         let getIndex = segmentControl.selectedSegmentIndex
@@ -40,22 +40,22 @@ class MyListViewController: UIViewController, UICollectionViewDelegate, UICollec
     var series = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "My List"
+        self.title = "Minha Lista"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         collection.delegate = self
         collection.dataSource = self
         segmentControl.translatesAutoresizingMaskIntoConstraints = false
         collection.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([
-            segmentControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            segmentControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            segmentControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            collection.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            collection.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            collection.topAnchor.constraint(equalTo: segmentControl.bottomAnchor, constant: 15),
-            collection.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
-            ])
+//        NSLayoutConstraint.activate([
+//            segmentControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+//            segmentControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+//            segmentControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+//            collection.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+//            collection.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+//            collection.topAnchor.constraint(equalTo: segmentControl.bottomAnchor, constant: 15),
+//            collection.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
+//            ])
     }
     
 

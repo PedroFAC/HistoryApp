@@ -17,6 +17,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bJx-db-gtw">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.80784313730000001" green="0.70980392160000005" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.34778615829999998" green="0.21998441220000001" blue="0.1464705765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="cWH-2c-tOg"/>
@@ -26,7 +30,7 @@
             </objects>
             <point key="canvasLocation" x="-225" y="360"/>
         </scene>
-        <!--Second-->
+        <!--Início-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="HistoryApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -120,7 +124,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Início" image="House-S" id="cPa-gy-q4n"/>
                     <navigationItem key="navigationItem" id="rNb-cc-daf"/>
                     <connections>
                         <outlet property="checkcollection" destination="Snh-AF-0Yr" id="ZtK-sV-wMu"/>
@@ -159,4 +163,7 @@
             <point key="canvasLocation" x="1531.8840579710145" y="359.59821428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="House-S" width="27" height="24"/>
+    </resources>
 </document>

@@ -32,14 +32,20 @@ class BotaoQueroAssistir: UIViewController {
     @IBOutlet weak var botaoDesmarcado: UIButton!
     @IBOutlet weak var botaoQueroAssistir: UIButton!
     @IBOutlet weak var botaoAssistido: UIButton!
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var Diretor: UILabel!
+    @IBOutlet weak var Atores: UILabel!
+    @IBOutlet weak var Sinopse: UITextView!
+    @IBOutlet weak var Cartaz: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         botaoQueroAssistir.isHidden = true
         botaoAssistido.isHidden = true
-        textView.text = "Based on the real life story of legendary cryptanalyst Alan Turing, the film portrays the nail-biting race against time by Turing and his brilliant team of code-breakers at Britain's top-secret Government Code and Cypher School at Bletchley Park, during the darkest days of World War II."
-        movieTitle.text = "The imitation Game"// Do any additional setup after loading the view.
+        Diretor.text = ""
+        Atores.text = ""
+        Sinopse.text = "Based on the real life story of legendary cryptanalyst Alan Turing, the film portrays the nail-biting race against time by Turing and his brilliant team of code-breakers at Britain's top-secret Government Code and Cypher School at Bletchley Park, during the darkest days of World War II."
+        movieTitle.text = "The Imitation Game"// Do any additional setup after loading the view.
     }
     
 

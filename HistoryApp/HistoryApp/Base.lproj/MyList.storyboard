@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Minha Lista-->
         <scene sceneID="ZMv-xp-GH3">
             <objects>
                 <viewController id="fUR-i6-X9T" customClass="MyListViewController" customModule="HistoryApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,60 +18,80 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ukl-bf-zzJ">
-                                <rect key="frame" x="19" y="123" width="374" height="582"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="b2X-y4-5mZ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="29"/>
+                                <color key="backgroundColor" red="1" green="0.8792359355853927" blue="0.69774509980587895" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <segments>
+                                    <segment title="To Watch"/>
+                                    <segment title="Watched"/>
+                                </segments>
+                                <color key="tintColor" red="0.34778615829999998" green="0.21998441220000001" blue="0.1464705765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segment:" destination="fUR-i6-X9T" eventType="valueChanged" id="wmd-lI-fzF"/>
+                                </connections>
+                            </segmentedControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ukl-bf-zzJ">
+                                <rect key="frame" x="0.0" y="124" width="414" height="738"/>
+                                <color key="backgroundColor" white="0.90000000000000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="738" id="UGl-uB-RAS"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="136-1q-k5N">
-                                    <size key="itemSize" width="111" height="112"/>
+                                    <size key="itemSize" width="389" height="232"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="fez-Tw-rtb" customClass="MyListCollectionCell" customModule="HistoryApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="111" height="112"/>
+                                        <rect key="frame" x="12.5" y="0.0" width="389" height="232"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="111" height="112"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="389" height="232"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B8Y-43-zvo">
-                                                    <rect key="frame" x="0.0" y="0.0" width="111" height="92"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B8Y-43-zvo">
+                                                    <rect key="frame" x="0.0" y="0.0" width="389" height="224"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vri-2A-7Hf">
-                                                    <rect key="frame" x="0.0" y="91" width="111" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vri-2A-7Hf">
+                                                    <rect key="frame" x="8" y="181" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Vri-2A-7Hf" secondAttribute="trailing" symbolic="YES" id="M3A-Ga-mE4"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="B8Y-43-zvo" secondAttribute="trailing" constant="-8" id="NZM-Qq-TAj"/>
+                                            <constraint firstItem="Vri-2A-7Hf" firstAttribute="leading" secondItem="fez-Tw-rtb" secondAttribute="leading" constant="8" id="Vou-cA-Pi0"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="B8Y-43-zvo" secondAttribute="bottom" id="ZEa-lB-mlG"/>
+                                            <constraint firstAttribute="trailing" secondItem="B8Y-43-zvo" secondAttribute="trailing" id="a5y-eh-D84"/>
+                                            <constraint firstItem="B8Y-43-zvo" firstAttribute="leading" secondItem="fez-Tw-rtb" secondAttribute="leading" id="fNb-rK-8Hr"/>
+                                            <constraint firstItem="B8Y-43-zvo" firstAttribute="top" secondItem="fez-Tw-rtb" secondAttribute="top" id="izT-ck-96V"/>
+                                            <constraint firstItem="B8Y-43-zvo" firstAttribute="leading" secondItem="fez-Tw-rtb" secondAttribute="leading" id="ltz-87-OLI"/>
+                                            <constraint firstAttribute="bottom" secondItem="Vri-2A-7Hf" secondAttribute="bottom" constant="30" id="oAL-n8-m8j"/>
+                                        </constraints>
                                         <connections>
-                                            <outlet property="image" destination="B8Y-43-zvo" id="49T-IC-LbP"/>
+                                            <outlet property="image" destination="B8Y-43-zvo" id="Ojp-gy-sMw"/>
                                             <outlet property="titulo" destination="Vri-2A-7Hf" id="UdP-Sg-XEH"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="b2X-y4-5mZ">
-                                <rect key="frame" x="64" y="340" width="285" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Filmes"/>
-                                    <segment title="Séries"/>
-                                </segments>
-                                <connections>
-                                    <action selector="segment:" destination="fUR-i6-X9T" eventType="valueChanged" id="wmd-lI-fzF"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.89621682363013699" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="b2X-y4-5mZ" firstAttribute="leading" secondItem="n8W-c3-VOU" secondAttribute="leading" id="MaG-gx-ZoS"/>
+                            <constraint firstItem="ukl-bf-zzJ" firstAttribute="trailing" secondItem="b2X-y4-5mZ" secondAttribute="trailing" id="Qn4-WM-DVa"/>
+                            <constraint firstItem="b2X-y4-5mZ" firstAttribute="top" secondItem="n8W-c3-VOU" secondAttribute="top" id="aME-iq-MGU"/>
+                            <constraint firstItem="ukl-bf-zzJ" firstAttribute="leading" secondItem="b2X-y4-5mZ" secondAttribute="leading" id="eyt-Jd-oBi"/>
+                            <constraint firstItem="b2X-y4-5mZ" firstAttribute="trailing" secondItem="n8W-c3-VOU" secondAttribute="trailing" id="i8g-8D-TiM"/>
+                            <constraint firstItem="ukl-bf-zzJ" firstAttribute="top" secondItem="b2X-y4-5mZ" secondAttribute="bottom" constant="8" id="kwA-2g-4uo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="n8W-c3-VOU"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Nx0-Zb-uwY"/>
+                    <tabBarItem key="tabBarItem" title="Minha Lista" image="MysList-s" id="Nx0-Zb-uwY"/>
                     <navigationItem key="navigationItem" id="Hml-AN-qmd"/>
                     <connections>
                         <outlet property="collection" destination="ukl-bf-zzJ" id="Aft-gr-OBq"/>
@@ -87,8 +107,11 @@
             <objects>
                 <navigationController id="Xsq-4t-tTB" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ves-BK-LU6">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.80784313725490198" green="0.70980392156862748" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.34778615829999998" green="0.21998441220000001" blue="0.1464705765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="fUR-i6-X9T" kind="relationship" relationship="rootViewController" id="0de-0a-iDr"/>
@@ -99,4 +122,7 @@
             <point key="canvasLocation" x="125" y="110"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MysList-s" width="24" height="22"/>
+    </resources>
 </document>

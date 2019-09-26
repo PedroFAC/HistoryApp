@@ -17,6 +17,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fan-la-VUI">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.51764705879999995" green="0.32156862749999998" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.80784313730000001" green="0.70980392160000005" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.34778615829999998" green="0.21998441220000001" blue="0.1464705765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="v6k-Az-jS6"/>
@@ -26,7 +31,7 @@
             </objects>
             <point key="canvasLocation" x="-148" y="-320"/>
         </scene>
-        <!--First-->
+        <!--Categorias-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="CategoriaController" customModule="HistoryApp" sceneMemberID="viewController">
@@ -36,7 +41,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Categorias" image="List_S" id="acW-dT-cKf"/>
                     <navigationItem key="navigationItem" id="DmJ-uo-uwq"/>
                     <connections>
                         <segue destination="C1d-hk-3Op" kind="show" identifier="detailSegue" id="ANb-Rp-ZRi"/>
@@ -81,6 +86,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="List_S" width="24" height="17"/>
     </resources>
 </document>

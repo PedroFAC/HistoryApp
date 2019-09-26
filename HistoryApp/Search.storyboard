@@ -17,6 +17,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ewu-WI-MCU">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.80784313730000001" green="0.70980392160000005" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.34778615829999998" green="0.21998441220000001" blue="0.1464705765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="xNl-2l-3d8" kind="relationship" relationship="rootViewController" id="9NB-kB-jrI"/>
@@ -26,7 +30,7 @@
             </objects>
             <point key="canvasLocation" x="191" y="11"/>
         </scene>
-        <!--Item-->
+        <!--Buscar-->
         <scene sceneID="VI8-4C-rGD">
             <objects>
                 <viewController id="xNl-2l-3d8" customClass="SearchViewController" customModule="HistoryApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,7 +40,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="xyH-kd-fq7"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="0oh-Mx-wyB"/>
+                    <tabBarItem key="tabBarItem" title="Buscar" image="Lupa-S" id="0oh-Mx-wyB"/>
                     <navigationItem key="navigationItem" id="aEa-9t-1em"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jGU-wY-Tjf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -44,4 +48,7 @@
             <point key="canvasLocation" x="1287" y="11"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Lupa-S" width="22" height="23"/>
+    </resources>
 </document>
