@@ -8,8 +8,24 @@
 
 import Foundation
 
-class Obra: Codable {
+struct Obra: Codable {
     let Title: String
     let Plot: String
     let Director: String
+    let Actors: String
+    let Poster: String
+    var locations: [Location]?
+}
+
+struct UtellyData: Codable {
+    let results: [UtellyObra]
+}
+
+struct UtellyObra: Codable {
+    let locations: [Location]
+}
+
+struct Location: Codable {
+    let display_name: String
+    let url: String
 }

@@ -30,7 +30,7 @@
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="HistoryApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW" customClass="Ho">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -94,25 +94,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dCO-TN-acg">
-                                <rect key="frame" x="64" y="123" width="285" height="28"/>
-                                <segments>
-                                    <segment title="Filmes"/>
-                                    <segment title="Séries"/>
-                                </segments>
-                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOj-mK-qYS">
+                                <rect key="frame" x="118" y="184" width="178" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Procurar por alguma Obra"/>
+                                <connections>
+                                    <segue destination="xjg-IE-anK" kind="show" id="aLi-Uq-v5Q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Snh-AF-0Yr" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="318-0m-WPn"/>
                             <constraint firstItem="MoL-Gz-ftZ" firstAttribute="top" secondItem="Snh-AF-0Yr" secondAttribute="bottom" constant="50" id="39E-1X-7rW"/>
-                            <constraint firstItem="dCO-TN-acg" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="35" id="5An-U3-ige"/>
                             <constraint firstItem="ovC-me-Wl7" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="7ZH-Ch-qH1"/>
-                            <constraint firstItem="dCO-TN-acg" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="8cE-zD-cE1"/>
-                            <constraint firstItem="5RQ-hi-ND0" firstAttribute="top" secondItem="dCO-TN-acg" secondAttribute="bottom" constant="71" id="Bv3-m3-KpE"/>
                             <constraint firstItem="Snh-AF-0Yr" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="DtK-JO-I2f"/>
                             <constraint firstItem="MoL-Gz-ftZ" firstAttribute="leading" secondItem="5RQ-hi-ND0" secondAttribute="leading" id="Gub-td-uBS"/>
                             <constraint firstItem="Snh-AF-0Yr" firstAttribute="top" secondItem="5RQ-hi-ND0" secondAttribute="bottom" constant="8" id="P7a-Fk-wYG"/>
+                            <constraint firstItem="5RQ-hi-ND0" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="134" id="RdJ-kH-UWz"/>
+                            <constraint firstItem="5RQ-hi-ND0" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="134" id="VBl-UX-k3X"/>
                             <constraint firstItem="ovC-me-Wl7" firstAttribute="height" secondItem="Snh-AF-0Yr" secondAttribute="height" id="ZMN-PV-UtF"/>
                             <constraint firstItem="ovC-me-Wl7" firstAttribute="top" secondItem="MoL-Gz-ftZ" secondAttribute="bottom" constant="20" id="azt-sa-lPC"/>
                             <constraint firstItem="ovC-me-Wl7" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="iqV-Fn-yof"/>
@@ -157,6 +157,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yrR-bw-phU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1531.8840579710145" y="359.59821428571428"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="Vup-jH-h1r">
+            <objects>
+                <viewController id="xjg-IE-anK" customClass="SearchViewController" customModule="HistoryApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NZw-4h-fcw" customClass="Search">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="sH9-Cl-QDR"/>
+                    </view>
+                    <connections>
+                        <segue destination="6FB-Ve-RjL" kind="show" identifier="obraSegue" id="BRh-b1-hV2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IgD-l3-fQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1252" y="1156"/>
+        </scene>
+        <!--Obra Controller-->
+        <scene sceneID="zfw-3c-n4k">
+            <objects>
+                <viewController id="6FB-Ve-RjL" customClass="ObraController" customModule="HistoryApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8FS-rq-jd8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="LS3-OU-qkS"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Kd-R5-gBl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2045" y="1156"/>
         </scene>
     </scenes>
 </document>

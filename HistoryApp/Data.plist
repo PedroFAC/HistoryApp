@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Categorias</key>
+	<array>
+		<string>2a Guerra Mundial</string>
+		<string>Guerra do Golfo</string>
+		<string>Grande Depressão</string>
+		<string>Ascensão e queda de Napoleão</string>
+		<string>Revolução russa e socialismo soviético</string>
+		<string>Guerra Fria</string>
+		<string>Fatos relevantes depois da guerra fria</string>
+		<string>Independência dos Estados Unidos</string>
+		<string>Revolução francesa</string>
+		<string>Revolução Industrial</string>
+	</array>
+	<key>Filmes</key>
+	<array>
+		<array>
+			<string>Mudbound</string>
+			<string>Saving Private Ryan</string>
+			<string>Schindler&apos;s List</string>
+		</array>
+		<array>
+			<string>The Hurt Locker</string>
+		</array>
+		<array>
+			<string>The Pianist</string>
+			<string>Bonnie and Clyde</string>
+			<string>The Untouchables</string>
+		</array>
+		<array>
+			<string>Napoleon</string>
+		</array>
+		<array>
+			<string>Anastasia</string>
+		</array>
+		<array>
+			<string>Full Metal Jacket</string>
+			<string>The Man Who Saved The World</string>
+			<string>Apocalypse Now</string>
+		</array>
+		<array>
+			<string>Cry Freedom</string>
+			<string>Lord of War</string>
+		</array>
+		<array>
+			<string>Lincoln</string>
+			<string>The Patriot</string>
+		</array>
+		<array>
+			<string>Farewell My Queen</string>
+		</array>
+		<array>
+			<string>Germinal</string>
+		</array>
+	</array>
+</dict>
+</plist>

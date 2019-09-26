@@ -38,10 +38,28 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="0oh-Mx-wyB"/>
                     <navigationItem key="navigationItem" id="aEa-9t-1em"/>
+                    <connections>
+                        <segue destination="6wL-08-mwf" kind="show" identifier="obraSegue" id="3PT-3w-Tmu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jGU-wY-Tjf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1287" y="11"/>
+        </scene>
+        <!--Obra Controller-->
+        <scene sceneID="rt6-OO-GNz">
+            <objects>
+                <viewController id="6wL-08-mwf" customClass="ObraController" customModule="HistoryApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cC1-3u-zDO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="bct-oC-k2v"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dSW-Kx-l3W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2281" y="11"/>
         </scene>
     </scenes>
 </document>

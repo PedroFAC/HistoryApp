@@ -1,17 +1,18 @@
 //
-//  SearchViewController.swift
+//  HomeViewController.swift
 //  HistoryApp
 //
-//  Created by aluno on 18/09/19.
+//  Created by aluno on 25/09/19.
 //  Copyright © 2019 aluno. All rights reserved.
 //
 
 import UIKit
-extension SearchViewController:UITableViewDelegate, UITableViewDataSource{
+
+class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            if isSearching{
-                return filteredData.count
-            }
+        if isSearching{
+            return filteredData.count
+        }
         return items.count
     }
     
@@ -22,7 +23,7 @@ extension SearchViewController:UITableViewDelegate, UITableViewDataSource{
             text = filteredData[indexPath.row]
         }else{
             text = items[indexPath.row]
-
+            
         }
         cell1.textLabel?.text = text
         cell1.textLabel?.font = UIFont.systemFont(ofSize: 22)
@@ -39,7 +40,7 @@ extension SearchViewController:UITableViewDelegate, UITableViewDataSource{
         if isSearching{
             data = filteredData[indexPath.row]
         }else{
-         data = items[indexPath.row]
+            data = items[indexPath.row]
         }
         self.performSegue(withIdentifier: "obraSegue", sender: data)
     }
@@ -52,17 +53,11 @@ extension SearchViewController:UITableViewDelegate, UITableViewDataSource{
             destiny.nomeObra = nomeObraSender
         }
     }
-    
-    
-}
-
-class SearchViewController: UIViewController, UISearchBarDelegate {
     var isSearching = false
     let searchBar = UISearchBar(frame:.zero)
     let results = UITableView(frame: .zero)
-    let recomendados = UILabel(frame: .zero)
-    var items = ["The Great Dictator","Stalingrad","Saving Private Ryan","Seven Years in Tibet","The Pianist","The Wave","The Untouchables","Cry Freedom", "Lord of War","Plymouth Adventure", "The Patriot","To kill a king","Modern Times" , "Napoleon"]
     var filteredData = [String]()
+    var items = ["The Great Dictator","Stalingrad","Saving Private Ryan","Seven Years in Tibet","The Pianist","The Wave","The Untouchables","Cry Freedom", "Lord of War","Plymouth Adventure", "The Patriot","To kill a king","Modern Times" , "Napoleon"]
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text == nil || searchBar.text == ""{
             isSearching = false
@@ -74,38 +69,31 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
             results.reloadData()
         }
     }
+    
+    
+    
     override func viewDidLoad() {
+        super.viewDidLoad()
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
-        super.viewDidLoad()
-       // self.title = "Buscar"
-      //  self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.title = "Home"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         searchBar.translatesAutoresizingMaskIntoConstraints = false
-        recomendados.translatesAutoresizingMaskIntoConstraints = false
         results.translatesAutoresizingMaskIntoConstraints = false
         results.delegate = self
         results.dataSource = self
-        searchBar.placeholder = "Pesquise por evento, data ou título de obra"
-        searchBar.isTranslucent = true
-        recomendados.text = "Recomendados"
-        recomendados.font = UIFont.systemFont(ofSize: 24)
-        view.addSubview(searchBar)
-        view.addSubview(recomendados)
-        view.addSubview(results)
+        searchBar.placeholder = "Pesquise por título de obra"
+        
+        
+        
         NSLayoutConstraint.activate([
-        searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-        searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-        searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-        results.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-        results.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-        results.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 0),
-        results.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
-        //recomendados.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-        //recomendados.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-        //recomendados.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 10),
-        //recomendados.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 300)
+            searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0)
         ])
+        // Do any additional setup after loading the view.
     }
+    
     
 
     /*

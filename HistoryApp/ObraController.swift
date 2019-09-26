@@ -17,10 +17,13 @@ class ObraController: UIViewController {
     let ondeEncontrarContent1  = UIButton(frame: .zero)
     let ondeEncontrarContent2  = UIButton(frame: .zero)
     let diretor = UILabel(frame: .zero)
+    let atores = UILabel(frame: .zero)
     
     var nomeObra : String = ""
     var plotObra : String = ""
     var diretorObra : String = ""
+    var atoresObra : String = ""
+    var links = ["Source":"" , "URL":""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,15 +38,34 @@ class ObraController: UIViewController {
                 print(obra.Title)
                 print(obra.Plot)
                 print(obra.Director)
+                print (obra.Actors)
                 self.nomeObra = obra.Title
                 self.plotObra = obra.Plot
                 self.diretorObra = obra.Director
-                
+                self.atoresObra = obra.Actors
                 DispatchQueue.main.async {
                     self.reloadViews()
                 }
             }
             
+        })
+        
+        WebRepository.getLinks(name: nomeObra, completion: { data, error in
+            if let error = error?.localizedDescription {
+                print(error)
+                return
+            }
+            if let locations = data {
+                self.links["Source"]  = locations.first?.display_name
+                self.links["URL"] = locations.first?.url
+                print(self.links["Source"])
+                print(self.links["URL"])
+                DispatchQueue.main.async{
+                    self.reloadLinks()
+                }
+                
+            }
+        
         })
         tituloObra.translatesAutoresizingMaskIntoConstraints = false
         ondeEncontrar.translatesAutoresizingMaskIntoConstraints = false
@@ -53,6 +75,7 @@ class ObraController: UIViewController {
         ondeEncontrarContent1.translatesAutoresizingMaskIntoConstraints = false
         ondeEncontrarContent2.translatesAutoresizingMaskIntoConstraints = false
         diretor.translatesAutoresizingMaskIntoConstraints = false
+        atores.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(tituloObra)
         view.addSubview(ondeEncontrar)
@@ -62,22 +85,22 @@ class ObraController: UIViewController {
         view.addSubview(ondeEncontrarContent1)
         view.addSubview(ondeEncontrarContent2)
         view.addSubview(diretor)
+        view.addSubview(atores)
         
      tituloObra.font = UIFont.systemFont(ofSize: 28)
         ondeEncontrar.font = UIFont.systemFont(ofSize: 24)
         elenco.font = UIFont.systemFont(ofSize: 24)
         elenco.text = "Elenco"
       //  imagem.image = #imageLiteral(resourceName: "Band_of_Brothers")
-        ondeEncontrarContent1.setTitle("HBO GO", for: .normal)
+        
         ondeEncontrarContent1.setTitleColor(.blue, for: .normal)
-        ondeEncontrarContent2.setTitle("Amazon Prime", for: .normal)
         ondeEncontrarContent2.setTitleColor(.blue, for: .normal)
         sinopse.font = UIFont.systemFont(ofSize: 18)
         sinopse.isEditable = false
         sinopse.isSelectable = false
 
         // Do any additional setup after loading the view.
-        
+        ondeEncontrarContent1.addTarget(self, action: #selector(openLink), for: .touchUpInside)
         NSLayoutConstraint.activate([
           tituloObra.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
           tituloObra.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
@@ -94,21 +117,22 @@ class ObraController: UIViewController {
             elenco.topAnchor.constraint(equalTo: sinopse.bottomAnchor, constant: 30),
             diretor.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             diretor.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            diretor.topAnchor.constraint(equalTo: elenco.bottomAnchor, constant: 30),
+            diretor.topAnchor.constraint(equalTo: elenco.bottomAnchor, constant: 5),
+            atores.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            atores.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            atores.topAnchor.constraint(equalTo: diretor.bottomAnchor, constant: 5),
+
              //curiosidades.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30)
-            
+        
             
             ondeEncontrar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             ondeEncontrar.trailingAnchor.constraint(equalTo:view.trailingAnchor, constant: -15),
-            ondeEncontrar.topAnchor.constraint(equalTo: diretor.bottomAnchor, constant: 10),
+            ondeEncontrar.topAnchor.constraint(equalTo: atores.bottomAnchor, constant: 10),
             ondeEncontrarContent1.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            //ondeEncontrarContent1.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            ondeEncontrarContent1.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             ondeEncontrarContent1.topAnchor.constraint(equalTo: ondeEncontrar.bottomAnchor, constant: 30),
-            ondeEncontrarContent1.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
-            ondeEncontrarContent2.leadingAnchor.constraint(equalTo: ondeEncontrarContent1.trailingAnchor, constant: 0),
-            ondeEncontrarContent2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            ondeEncontrarContent2.topAnchor.constraint(equalTo: ondeEncontrar.bottomAnchor, constant: 30),
-            ondeEncontrarContent2.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            ondeEncontrarContent1.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
+            
             
             ])
     }
@@ -118,8 +142,18 @@ class ObraController: UIViewController {
         sinopse.text = plotObra
         diretor.text = "Diretor: " + diretorObra
         tituloObra.text = nomeObra
+        atores.text =  "Atores: " + atoresObra
+        atores.numberOfLines = 3
     }
-    
+    func reloadLinks(){
+        ondeEncontrarContent1.setTitle(links["Source"], for: .normal)
+        ondeEncontrarContent2.setTitle(links["URL"], for: .normal)
+
+    }
+    @objc func openLink(sender: UIButton!){
+        print(links["URL"])
+        UIApplication.shared.open(URL(string:links["URL"]!)! as URL, options: [:], completionHandler: nil)
+    }
 
     /*
     // MARK: - Navigation
@@ -130,5 +164,5 @@ class ObraController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

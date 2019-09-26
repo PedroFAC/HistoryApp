@@ -12,6 +12,10 @@
 		5716B4932332B41E00A37DA3 /* CheckCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5716B4912332B41E00A37DA3 /* CheckCollectionViewCell.xib */; };
 		571813C72334021000180C4C /* TesteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571813C62334021000180C4C /* TesteViewController.swift */; };
 		571813C9233407B100180C4C /* Filme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571813C8233407B100180C4C /* Filme.swift */; };
+		571AA79D233BE1EB0087A61E /* location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571AA79C233BE1EB0087A61E /* location.swift */; };
+		571AA79F233BED1B0087A61E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571AA79E233BED1B0087A61E /* HomeViewController.swift */; };
+		571D36EB233D35DA007A4C9A /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 571D36EA233D35DA007A4C9A /* Data.plist */; };
+		571E63D7233AA03B00E22A6D /* ObraModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 571E63D5233AA03B00E22A6D /* ObraModel.xcdatamodeld */; };
 		572FF5712333EE1000E620C8 /* MyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572FF5702333EE1000E620C8 /* MyListViewController.swift */; };
 		572FF5732333F5B500E620C8 /* MyListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572FF5722333F5B500E620C8 /* MyListCollectionCell.swift */; };
 		5739FD20232FFF8700C8623A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739FD1F232FFF8700C8623A /* AppDelegate.swift */; };
@@ -58,6 +62,10 @@
 		5716B4912332B41E00A37DA3 /* CheckCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckCollectionViewCell.xib; sourceTree = "<group>"; };
 		571813C62334021000180C4C /* TesteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesteViewController.swift; sourceTree = "<group>"; };
 		571813C8233407B100180C4C /* Filme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filme.swift; sourceTree = "<group>"; };
+		571AA79C233BE1EB0087A61E /* location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = location.swift; sourceTree = "<group>"; };
+		571AA79E233BED1B0087A61E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		571D36EA233D35DA007A4C9A /* Data.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Data.plist; sourceTree = "<group>"; };
+		571E63D6233AA03B00E22A6D /* ObraModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ObraModel.xcdatamodel; sourceTree = "<group>"; };
 		572FF5702333EE1000E620C8 /* MyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListViewController.swift; sourceTree = "<group>"; };
 		572FF5722333F5B500E620C8 /* MyListCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListCollectionCell.swift; sourceTree = "<group>"; };
 		5739FD1C232FFF8600C8623A /* HistoryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HistoryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,8 +158,9 @@
 				579628FE23301E3000F72B46 /* CategoriaListaController.swift */,
 				5796290023302AAF00F72B46 /* ObraController.swift */,
 				571016412332B0730029B0FE /* SearchViewController.swift */,
-				572FF5702333EE1000E620C8 /* MyListViewController.swift */,
+				571AA79E233BED1B0087A61E /* HomeViewController.swift */,
 				5739FD23232FFF8700C8623A /* SecondViewController.swift */,
+				572FF5702333EE1000E620C8 /* MyListViewController.swift */,
 				5739FD25232FFF8700C8623A /* Main.storyboard */,
 				579628F423300B9500F72B46 /* Categorias.storyboard */,
 				579628FB23300C6300F72B46 /* MyList.storyboard */,
@@ -163,10 +172,13 @@
 				5739FD28232FFF8800C8623A /* Assets.xcassets */,
 				5739FD2A232FFF8800C8623A /* LaunchScreen.storyboard */,
 				5739FD2D232FFF8800C8623A /* Info.plist */,
+				571D36EA233D35DA007A4C9A /* Data.plist */,
 				579628F123300A3300F72B46 /* CategoriaController.xib */,
 				5716B4942332B42400A37DA3 /* CheckCollectionViewCell */,
 				574E7E3D23395B8B00AE4E0D /* WebRepository.swift */,
+				571E63D5233AA03B00E22A6D /* ObraModel.xcdatamodeld */,
 				574E7E3F23395BA700AE4E0D /* Obra.swift */,
+				571AA79C233BE1EB0087A61E /* location.swift */,
 				574E7E4123395C3D00AE4E0D /* Routes.swift */,
 			);
 			path = HistoryApp;
@@ -300,6 +312,7 @@
 				5739FD27232FFF8700C8623A /* Main.storyboard in Resources */,
 				579628F823300BF200F72B46 /* Home.storyboard in Resources */,
 				579628FA23300C5200F72B46 /* Search.storyboard in Resources */,
+				571D36EB233D35DA007A4C9A /* Data.plist in Resources */,
 				5716B4932332B41E00A37DA3 /* CheckCollectionViewCell.xib in Resources */,
 				579628F323300A3300F72B46 /* CategoriaController.xib in Resources */,
 				579628F523300B9500F72B46 /* Categorias.storyboard in Resources */,
@@ -330,7 +343,9 @@
 				5716B4922332B41E00A37DA3 /* CheckCollectionViewCell.swift in Sources */,
 				574E7E4023395BA700AE4E0D /* Obra.swift in Sources */,
 				5739FD24232FFF8700C8623A /* SecondViewController.swift in Sources */,
+				571E63D7233AA03B00E22A6D /* ObraModel.xcdatamodeld in Sources */,
 				571813C72334021000180C4C /* TesteViewController.swift in Sources */,
+				571AA79F233BED1B0087A61E /* HomeViewController.swift in Sources */,
 				571813C9233407B100180C4C /* Filme.swift in Sources */,
 				572FF5732333F5B500E620C8 /* MyListCollectionCell.swift in Sources */,
 				571016422332B0730029B0FE /* SearchViewController.swift in Sources */,
@@ -342,6 +357,7 @@
 				5739FD22232FFF8700C8623A /* FirstViewController.swift in Sources */,
 				572FF5712333EE1000E620C8 /* MyListViewController.swift in Sources */,
 				5796290123302AAF00F72B46 /* ObraController.swift in Sources */,
+				571AA79D233BE1EB0087A61E /* location.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,6 +696,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		571E63D5233AA03B00E22A6D /* ObraModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				571E63D6233AA03B00E22A6D /* ObraModel.xcdatamodel */,
+			);
+			currentVersion = 571E63D6233AA03B00E22A6D /* ObraModel.xcdatamodel */;
+			path = ObraModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5739FD14232FFF8600C8623A /* Project object */;
 }

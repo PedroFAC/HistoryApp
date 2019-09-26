@@ -37,24 +37,44 @@ extension CategoriaListaController: UITableViewDelegate, UITableViewDataSource {
             let destiny = segue.destination as? ObraController,
             let nomeObraSender = sender as? String {
             destiny.nomeObra = nomeObraSender
+            //destiny.filmes = self.filmes
         }
     }
     
 }
 class CategoriaListaController: UIViewController {
-    
+    let path = Bundle.main.path(forResource: "Data", ofType: "plist")
+    var dict: NSDictionary? = nil
+    var filmes = [[String]]()
+    var categorias = [String]()
     var data: String!
     var nomeCategoria = ""
     let tableView = UITableView(frame: .zero)
     var listaFilmes = [""]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
-        qualCategoria()
+        print(filmes)
+        print(listaFilmes)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isScrollEnabled = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.dict = NSDictionary(contentsOfFile: path!)
+        
+        if let categorias = dict?.object(forKey: "Categorias") as? [String] {
+            self.categorias = categorias
+        }
+        if let filmes = dict?.object(forKey: "Filmes") as? [[String]]{
+            self.filmes = filmes
+        }
+        
+        qualCategoria()
+
+        
 
         NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
@@ -66,31 +86,39 @@ class CategoriaListaController: UIViewController {
         // Do any additional setup after loading the view.
     }
     func qualCategoria (){
-        switch data {
-        case "2ª Guerra Mundial":
-            listaFilmes = ["The Great Dictator","Stalingrad","Saving Private Ryan","Seven Years in Tibet"]
-        case "Guerra do Golfo":
-            listaFilmes = ["The Hurt Locker"]
-        case "Grande Depressão":
-            listaFilmes = ["The Pianist","The Wave","The Untouchables"]
-        case "Unificações italiana e alemã":
-            listaFilmes = ["Garibaldi"]
-        case "Ascensão e queda de Napoleão":
-            listaFilmes = ["Napoleon"]
-        case "Revolução russa e socialismo soviético":
-            listaFilmes = ["Battleship Potemkin"]
-        case "Fatos relevantes depois da guerra fria":
-            listaFilmes = ["Cry Freedom", "Lord of War"]
-        case "Independência dos Estados Unidos":
-            listaFilmes = ["Plymouth Adventure", "The Patriot"]
-        case "Revolução francesa":
-            listaFilmes = ["To kill a king", "The Miserables"]
-        case "Revolução Industrial":
-            listaFilmes = ["Modern Times"]
-            
-        default:
-            listaFilmes = [""]
+//        switch data {
+//        case "2ª Guerra Mundial":
+//            listaFilmes = filmes[0]
+//        case "Guerra do Golfo":
+//            listaFilmes = filmes[1]
+//        case "Grande Depressão":
+//            listaFilmes = filmes[2]
+//        case "Ascensão e queda de Napoleão":
+//            listaFilmes = filmes[3]
+//        case "Revolução russa e socialismo soviético":
+//            listaFilmes = filmes[4]
+//        case "Guerra Fria":
+//            listaFilmes  = filmes[5]
+//        case "Fatos relevantes depois da guerra fria":
+//            listaFilmes = filmes[6]
+//        case "Independência dos Estados Unidos":
+//            listaFilmes = filmes[7]
+//        case "Revolução francesa":
+//            listaFilmes = filmes[8]
+//        case "Revolução Industrial":
+//            listaFilmes = filmes[9]
+//
+//        default:
+//            listaFilmes = [""]
+//        }
+//
+        let result = self.categorias.enumerated().filter {
+            return $0.element == data
         }
+        
+        listaFilmes = filmes[result[0].offset] 
+        
+        self.tableView.reloadData()
     }
 
     /*
