@@ -58,7 +58,7 @@ class CategoriaController: UIViewController {
         print (categorias)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.isScrollEnabled = false
+        tableView.isScrollEnabled = true
         tableView.translatesAutoresizingMaskIntoConstraints = false
         titulo.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)

@@ -12,10 +12,12 @@ class CheckCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var text: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        layer.cornerRadius = 6.0
+        layer.masksToBounds = true
     }
 
 }

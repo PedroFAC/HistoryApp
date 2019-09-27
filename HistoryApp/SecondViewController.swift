@@ -58,25 +58,25 @@ class SecondViewController: UIViewController {
     
     let filme : [Filme] = [
     
-        Filme(img:  UIImage(named: "img1")!, text: "iunasiund"),
-        Filme(img:  UIImage(named: "img2")!, text: "iunasiund"),
-        Filme(img:  UIImage(named: "img3")!, text: "iunasiund"),
-        Filme(img:  UIImage(named: "img1")!, text: "iunasiund"),
-        Filme(img:  UIImage(named: "img2")!, text: "iunasiund"),
-        Filme(img:  UIImage(named: "img3")!, text: "iunasiund"),
-        Filme(img:  UIImage(named: "img2")!, text: "iunasiund"),
+        Filme(img:  UIImage(named: "lord")!, text: "Saving Private Ryan"),
+        Filme(img:  UIImage(named: "anastasia")!, text: "Germinal"),
+        Filme(img:  UIImage(named: "lincoln")!, text: "The Hurt Locker"),
+        Filme(img:  UIImage(named: "napoleon")!, text: "The Patriot"),
+        Filme(img:  UIImage(named: "cryfreedom")!, text: "Anastasia"),
+        Filme(img:  UIImage(named: "apocalypse")!, text: "The Pianist"),
+        Filme(img:  UIImage(named: "mudbound")!, text: "Full Metal Jacket"),
         
     ]
     
     let salvo : [Filme] = [
         
-        Filme(img:  UIImage(named: "img1")!, text: "iunasiund"),
-        Filme(img:  UIImage(named: "img2")!, text: "iunasiund"),
-        Filme(img:  UIImage(named: "img3")!, text: "iunasiund"),
-        Filme(img:  UIImage(named: "img1")!, text: "iunasiund"),
-        Filme(img:  UIImage(named: "img2")!, text: "iunasiund"),
-        Filme(img:  UIImage(named: "img3")!, text: "iunasiund"),
-        Filme(img:  UIImage(named: "img2")!, text: "iunasiund"),
+        Filme(img:  UIImage(named: "lord")!, text: "Lord of War"),
+        Filme(img:  UIImage(named: "anastasia")!, text: "Anastasia"),
+        Filme(img:  UIImage(named: "lincoln")!, text: "Lincoln"),
+        Filme(img:  UIImage(named: "napoleon")!, text: "Napoleon"),
+        Filme(img:  UIImage(named: "cryfreedom")!, text: "Cry Freedom"),
+        Filme(img:  UIImage(named: "apocalypse")!, text: "Apocalypse Now"),
+        Filme(img:  UIImage(named: "mudbound")!, text: "Mudbound"),
         
         ]
     
@@ -194,8 +194,10 @@ extension SecondViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         if collectionView.restorationIdentifier == "check" {
             cell.imageView.image = filme[indexPath.row].img
+            cell.text.text = salvo[indexPath.row].text
         } else {
             cell.imageView.image = salvo[indexPath.row].img
+            cell.text.text = salvo[indexPath.row].text
         }
         
         return cell
@@ -203,9 +205,18 @@ extension SecondViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = selectedIndex,
-           let destination  = segue.destination as? TesteViewController {
-            destination.text = filme[indexPath.row].text
+           let destination  = segue.destination as? ObraController {
+            destination.nomeObra = salvo[indexPath.row].text
         }
+ 
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier=="obraSegue",
+            let indexPath = selectedIndex,
+            let destiny = segue.destination as? ObraController,
+            let nomeObraSender = sender as? String {
+            destiny.nomeObra = filme[indexPath.row].text
+            //destiny.filmes = self.filmes
+        }*/
     }
    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

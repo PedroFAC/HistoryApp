@@ -60,7 +60,7 @@ class CategoriaListaController: UIViewController {
         print(listaFilmes)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.isScrollEnabled = false
+        tableView.isScrollEnabled = true
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         self.dict = NSDictionary(contentsOfFile: path!)

@@ -26,13 +26,23 @@
                                 <rect key="frame" x="0.0" y="0.0" width="123" height="85"/>
                                 <color key="backgroundColor" red="1" green="0.63528385586574387" blue="0.072388938715856388" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="text" text="nome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0W7-Ju-GbR">
+                                <rect key="frame" x="40" y="93" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0W7-Ju-GbR" secondAttribute="trailing" constant="40" id="9Va-cA-YeU"/>
                             <constraint firstItem="YBe-zK-mU6" firstAttribute="top" secondItem="8iC-2I-uq4" secondAttribute="top" id="NLg-2b-mZS"/>
                             <constraint firstAttribute="trailing" secondItem="YBe-zK-mU6" secondAttribute="trailing" id="Tri-du-0HS"/>
                             <constraint firstItem="YBe-zK-mU6" firstAttribute="leading" secondItem="8iC-2I-uq4" secondAttribute="leading" id="WDs-kX-r12"/>
+                            <constraint firstItem="0W7-Ju-GbR" firstAttribute="top" secondItem="YBe-zK-mU6" secondAttribute="bottom" constant="8" id="YuW-Pc-wkn"/>
                             <constraint firstAttribute="bottom" secondItem="YBe-zK-mU6" secondAttribute="bottom" constant="30" id="bnr-l9-m6s"/>
+                            <constraint firstItem="0W7-Ju-GbR" firstAttribute="centerX" secondItem="8iC-2I-uq4" secondAttribute="centerX" id="fLA-EZ-rcQ"/>
+                            <constraint firstAttribute="bottom" secondItem="0W7-Ju-GbR" secondAttribute="bottom" constant="1" id="n8w-8v-iJq"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -48,6 +58,7 @@
             <connections>
                 <outlet property="bgView" destination="8iC-2I-uq4" id="h5A-ws-b96"/>
                 <outlet property="imageView" destination="YBe-zK-mU6" id="lhY-KT-kuY"/>
+                <outlet property="text" destination="0W7-Ju-GbR" id="4s3-28-uQZ"/>
             </connections>
             <point key="canvasLocation" x="346" y="175"/>
         </collectionViewCell>

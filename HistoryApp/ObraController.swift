@@ -91,9 +91,12 @@ class ObraController: UIViewController {
         ondeEncontrar.font = UIFont.systemFont(ofSize: 24)
         elenco.font = UIFont.systemFont(ofSize: 24)
         elenco.text = "Elenco"
+        atores.font = UIFont.systemFont(ofSize: 20)
+        diretor.font = UIFont.systemFont(ofSize: 20)
+
       //  imagem.image = #imageLiteral(resourceName: "Band_of_Brothers")
-        
-        ondeEncontrarContent1.setTitleColor(.blue, for: .normal)
+        let corbotao = UIColor(cgColor: #colorLiteral(red: 0.5926964879, green: 0.3994058669, blue: 0.3615191579, alpha: 1) )
+        ondeEncontrarContent1.setTitleColor(corbotao, for: .normal)
         ondeEncontrarContent2.setTitleColor(.blue, for: .normal)
         sinopse.font = UIFont.systemFont(ofSize: 18)
         sinopse.isEditable = false

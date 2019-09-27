@@ -17,6 +17,15 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bJx-db-gtw">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.51764705879999995" green="0.32156862749999998" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.51764705879999995" green="0.32156862749999998" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.78431372549019607" green="0.6705882352941176" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.51764705882352935" green="0.32156862745098036" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.34901960784313724" green="0.2196078431372549" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="cWH-2c-tOg"/>
@@ -35,7 +44,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="check" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Snh-AF-0Yr">
-                                <rect key="frame" x="0.0" y="251" width="414" height="161"/>
+                                <rect key="frame" x="0.0" y="263.5" width="414" height="161"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="161" id="FXD-DE-8Hp"/>
@@ -62,13 +71,13 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salvas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoL-Gz-ftZ">
-                                <rect key="frame" x="20" y="462" width="50" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="474.5" width="73.5" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="salvas" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ovC-me-Wl7">
-                                <rect key="frame" x="0.0" y="503" width="414" height="161"/>
+                                <rect key="frame" x="0.0" y="526" width="414" height="161"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="TrH-nm-aba">
                                     <size key="itemSize" width="181" height="118"/>
@@ -89,15 +98,17 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recomendações" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5RQ-hi-ND0">
-                                <rect key="frame" x="20" y="222" width="128" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="222" width="202.5" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOj-mK-qYS">
-                                <rect key="frame" x="118" y="184" width="178" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Procurar por alguma Obra"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOj-mK-qYS">
+                                <rect key="frame" x="44" y="138" width="326" height="45"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                <state key="normal" title="Procurar por alguma Obra">
+                                    <color key="titleColor" red="0.51764705879999995" green="0.32156862749999998" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="xjg-IE-anK" kind="show" id="aLi-Uq-v5Q"/>
                                 </connections>
@@ -109,10 +120,13 @@
                             <constraint firstItem="MoL-Gz-ftZ" firstAttribute="top" secondItem="Snh-AF-0Yr" secondAttribute="bottom" constant="50" id="39E-1X-7rW"/>
                             <constraint firstItem="ovC-me-Wl7" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="7ZH-Ch-qH1"/>
                             <constraint firstItem="Snh-AF-0Yr" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="DtK-JO-I2f"/>
+                            <constraint firstItem="ZOj-mK-qYS" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="F82-y1-Sc5"/>
                             <constraint firstItem="MoL-Gz-ftZ" firstAttribute="leading" secondItem="5RQ-hi-ND0" secondAttribute="leading" id="Gub-td-uBS"/>
                             <constraint firstItem="Snh-AF-0Yr" firstAttribute="top" secondItem="5RQ-hi-ND0" secondAttribute="bottom" constant="8" id="P7a-Fk-wYG"/>
                             <constraint firstItem="5RQ-hi-ND0" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="134" id="RdJ-kH-UWz"/>
+                            <constraint firstItem="ZOj-mK-qYS" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="50" id="ShC-J9-2ey"/>
                             <constraint firstItem="5RQ-hi-ND0" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="134" id="VBl-UX-k3X"/>
+                            <constraint firstItem="5RQ-hi-ND0" firstAttribute="top" secondItem="ZOj-mK-qYS" secondAttribute="bottom" constant="39" id="VaZ-xH-fig"/>
                             <constraint firstItem="ovC-me-Wl7" firstAttribute="height" secondItem="Snh-AF-0Yr" secondAttribute="height" id="ZMN-PV-UtF"/>
                             <constraint firstItem="ovC-me-Wl7" firstAttribute="top" secondItem="MoL-Gz-ftZ" secondAttribute="bottom" constant="20" id="azt-sa-lPC"/>
                             <constraint firstItem="ovC-me-Wl7" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="iqV-Fn-yof"/>
@@ -120,7 +134,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Second" image="House-S" id="cPa-gy-q4n"/>
                     <navigationItem key="navigationItem" id="rNb-cc-daf"/>
                     <connections>
                         <outlet property="checkcollection" destination="Snh-AF-0Yr" id="ZtK-sV-wMu"/>
@@ -131,28 +145,17 @@
             </objects>
             <point key="canvasLocation" x="698.55072463768124" y="359.59821428571428"/>
         </scene>
-        <!--Teste View Controller-->
+        <!--Obra Controller-->
         <scene sceneID="Jai-85-6zc">
             <objects>
-                <viewController storyboardIdentifier="testeTela" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Z0j-Cm-ooc" customClass="TesteViewController" customModule="HistoryApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="testeTela" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Z0j-Cm-ooc" customClass="ObraController" customModule="HistoryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cj5-cQ-Ncj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Teste tela de filme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KgE-hQ-ahc">
-                                <rect key="frame" x="106" y="367" width="202" height="78"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.51764705879999995" green="0.32156862749999998" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="yar-9i-CO4"/>
                     </view>
-                    <connections>
-                        <outlet property="teste" destination="KgE-hQ-ahc" id="zAb-ym-OCN"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yrR-bw-phU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -192,4 +195,7 @@
             <point key="canvasLocation" x="2045" y="1156"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="House-S" width="27" height="24"/>
+    </resources>
 </document>

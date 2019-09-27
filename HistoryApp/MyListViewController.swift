@@ -17,12 +17,14 @@ class MyListViewController: UIViewController, UICollectionViewDelegate, UICollec
         let cell = collection.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         if let myCell = cell as? MyListCollectionCell{
             myCell.titulo.text = obras[indexPath.row]
-            myCell.image.image = img[segmentControl.selectedSegmentIndex]
+            myCell.image.image = img[segmentControl.selectedSegmentIndex][indexPath.row]
         }
         return cell
     }
     
-    let img : [UIImage] = [#imageLiteral(resourceName: "200px-Saving_Private_Ryan_poster"),#imageLiteral(resourceName: "Band_of_Brothers")]
+    let img : [[UIImage]] = [[#imageLiteral(resourceName: "Band_of_Brothers"),#imageLiteral(resourceName: "germinal"),#imageLiteral(resourceName: "mudbound"),#imageLiteral(resourceName: "napoleon"),#imageLiteral(resourceName: "lincoln"),#imageLiteral(resourceName: "cryfreedom")],[#imageLiteral(resourceName: "lord"),#imageLiteral(resourceName: "cryfreedom"),#imageLiteral(resourceName: "anastasia"),#imageLiteral(resourceName: "200px-Saving_Private_Ryan_poster"),#imageLiteral(resourceName: "mudbound"),#imageLiteral(resourceName: "img2")]]
+    
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBAction func segment(_ sender: UISegmentedControl) {
         let getIndex = segmentControl.selectedSegmentIndex
@@ -40,22 +42,22 @@ class MyListViewController: UIViewController, UICollectionViewDelegate, UICollec
     var series = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "My List"
+        self.title = "Minha Lista"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         collection.delegate = self
         collection.dataSource = self
         segmentControl.translatesAutoresizingMaskIntoConstraints = false
         collection.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([
-            segmentControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            segmentControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            segmentControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            collection.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            collection.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            collection.topAnchor.constraint(equalTo: segmentControl.bottomAnchor, constant: 15),
-            collection.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
-            ])
+//        NSLayoutConstraint.activate([
+//            segmentControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+//            segmentControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+//            segmentControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+//            collection.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+//            collection.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+//            collection.topAnchor.constraint(equalTo: segmentControl.bottomAnchor, constant: 15),
+//            collection.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
+//            ])
     }
     
 

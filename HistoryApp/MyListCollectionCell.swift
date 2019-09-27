@@ -12,4 +12,10 @@ class MyListCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var titulo: UILabel!
+    
+    
+//    override func awakeFromNib() {
+//        <#code#>
+//    }
+//
 }
